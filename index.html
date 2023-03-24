@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Relax.js with Swipeable Cards</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    html {
+      height:100%;
+      width: 100%;
+      position: fixed;
+    }
+    body {
+      height: 100vh;
+      overflow-x: hidden; /* Hide horizontal scrollbar */
+      background-color: #141414;
+      color: #fff;
+    }
+    .swiper-container {
+      height: 100%;
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 32px;
+      font-weight: bold;
+    }
+    .swiper-slide:nth-child(odd) {
+      background-color: #212121;
+    }
+    .swiper-slide:nth-child(even) {
+      background-color: #292929;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: #ef5350;
+    }
+    .swiper-pagination-bullet {
+      background-color: #444;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: #ef5350;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Breathe in, breathe out</div>
+      <div class="swiper-slide">Relax your shoulders</div>
+      <div class="swiper-slide">Clear your mind</div>
+      <div class="swiper-slide">Let go of stress</div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const circle = document.querySelector('.circle');
+    const swiper = new Swiper('.swiper-container', {
+      direction: 'horizontal',
+      loop: true,
+      grabCursor: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on: {
+        init: function () {
+          animateCircle();
+        },
+        slideChange: function () {
+          animateCircle();
+        },
+      },
+    });
+    function animateCircle() {
+      if (swiper.realIndex % 2 === 0) {
+        circle.style.animationName = 'circle-animation-x';
+      } else {
+        circle.style.animationName = 'circle-animation-y';
+      }
+    }
+  </script>
+</body>
+</html>
