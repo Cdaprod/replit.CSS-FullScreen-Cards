@@ -6,12 +6,13 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <style>
     html {
-      height:100%;
+      
       width: 100%;
       position: fixed;
     }
     body {
       height: 100vh;
+      top: -50px;
       overflow-x: hidden; /* Hide horizontal scrollbar */
       background-color: #141414;
       color: #fff;
@@ -24,7 +25,9 @@
       justify-content: center;
       align-items: center;
       font-size: 32px;
-      font-weight: bold;
+    }
+    p, h2 {
+      padding: 10%;
     }
     .swiper-slide:nth-child(odd) {
       background-color: #212121;
@@ -48,10 +51,40 @@
 
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">Breathe in, breathe out</div>
-      <div class="swiper-slide">Relax your shoulders</div>
-      <div class="swiper-slide">Clear your mind</div>
-      <div class="swiper-slide">Let go of stress</div>
+    
+      <div class="swiper-slide">
+      <section>
+      <h2>I love SaaS</h2>
+      <p>Experienced creator via Adobe Creative Cloud, HTML, CSS, JavaScript, Python, C++, VSCode and Github.</p>
+      <p>With a love of projects, I am excited to work with like-minded developers and to deliver high-quality, responsive, and user-friendly web pages and applications, as well as backend cloud architecture and development with popular VPS providors such as AWS, Linode, and Digital Ocean.</p>
+      </section>
+      </div>
+      
+      <div class="swiper-slide"> 
+      <section>
+      <img src="">
+      <h2></h2>
+      <h4></h4>
+      <p>With a passion for tinkering, I've established multiple shops and stations in my home.</p> 
+      <p>From a station for microsoldering, to a full woodshop, or maybe you prefer the portrait photography studio, and the video editing station, My love for developing has led me to building a CNC machine and 3D printer from scratch... I cant keep my hands off of IoT; dont even get me started!</p>
+      </section>
+      </div>
+      
+      <div class="swiper-slide">
+      <section>
+      <h2></h2>
+      <p></p> 
+      <p></p>
+      </section>
+      </div>
+      
+      <div class="swiper-slide">
+      <section>
+      <h2></h2>
+      <p></p> 
+      <p></p>
+      </section>
+      </div>
     </div>
     <div class="swiper-pagination"></div>
     <div class="swiper-button-prev"></div>
